@@ -17,7 +17,7 @@ public class OVChipkaart {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="reiziger_id", referencedColumnName = "reiziger_id")
     private Reiziger reiziger;
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "ov_chipkaart_product",
             joinColumns = @JoinColumn(name = "kaart_nummer", referencedColumnName = "kaart_nummer"),
             inverseJoinColumns = @JoinColumn(name="product_nummer", referencedColumnName = "product_nummer")

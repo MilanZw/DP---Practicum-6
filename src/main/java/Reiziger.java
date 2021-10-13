@@ -20,9 +20,8 @@ public class Reiziger {
     private Date geboortedatum;
 
     @OneToOne(cascade=CascadeType.ALL, mappedBy = "reiziger")
-    @JoinColumn(name="adres_id", referencedColumnName = "adres_id")
     private Adres adres;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "reiziger")
     private List<OVChipkaart> chipkaarten = new ArrayList<OVChipkaart>();
 
     public Reiziger() {
