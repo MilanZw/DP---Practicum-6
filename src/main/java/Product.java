@@ -20,7 +20,11 @@ public class Product {
     private String status;
     @Transient
     private Date lastUpdated;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
+    @JoinTable(name="ov_chipkaart_product",
+            joinColumns = @JoinColumn(name="product_nummer", referencedColumnName = "product_nummer"),
+            inverseJoinColumns = @JoinColumn(name="kaart_nummer", referencedColumnName = "kaart_nummer")
+    )
     List<OVChipkaart> ovChipkaarts;
 
     public Product() {
